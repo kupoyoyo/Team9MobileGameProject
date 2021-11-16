@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [SerializeField] private Joystick joystick;
 
     [SerializeField] private CharacterController controller;
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject fogPlane;
     [SerializeField] private GameObject edgePlane;
@@ -17,9 +15,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float cameraOffset = 19f;
     [SerializeField] private float fogPlaneOffset = 80f;
     [SerializeField] private float edgePlaneOffset = 895f;
-
-    //[SerializeField] private float moveX = 0f;
-    //[SerializeField] private float moveY = 0f;
 
     void Update()
     {
@@ -35,5 +30,18 @@ public class PlayerMovement : MonoBehaviour
         mainCamera.transform.position = cameraPos;
         fogPlane.transform.position = fogPos;
         edgePlane.transform.position = edgePos;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Danger")
+        {
+            gameManager.GameOver();
+        }
+        else if (other.tag == "Collectible")
+        {
+            gameManager.score += 100;
+            other.gameObject.SetActive(false);
+        }
     }
 }
