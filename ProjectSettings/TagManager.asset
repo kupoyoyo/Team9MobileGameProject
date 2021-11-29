@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Danger
   - Collectible
+  - Event
   layers:
   - Default
   - TransparentFX
