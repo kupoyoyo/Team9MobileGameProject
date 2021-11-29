@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             gameManager.score += 100;
             other.gameObject.SetActive(false);
+            
         }
     }
 }

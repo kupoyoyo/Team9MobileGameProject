@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class Menu : MonoBehaviour
     public GameObject startMenu;
     public GameObject resumeButton;
 
+    public AudioSource mainMenuBGM;
+
     // Start is called before the first frame update
     void Start()
     {
-        startMenu.SetActive(false);
+        //startMenu.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class Menu : MonoBehaviour
     public void PlayNewGame()
     {
         SceneManager.LoadScene(1);
+        
 
     }
 
