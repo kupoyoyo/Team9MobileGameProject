@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Audio;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fogPlaneOffset = 80f;
     [SerializeField] private float edgePlaneOffset = 895f;
 
+
+    
+
+   
     void Update()
     {
 
