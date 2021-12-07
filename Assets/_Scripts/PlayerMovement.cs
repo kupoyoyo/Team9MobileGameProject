@@ -1,9 +1,10 @@
 using UnityEngine;
 
-
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Joystick joystick;
+    [SerializeField] private AudioSFX audioSFX;
+
 
     [SerializeField] private CharacterController controller;
     [SerializeField] private GameManager gameManager;
@@ -17,10 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fogPlaneOffset = 80f;
     [SerializeField] private float edgePlaneOffset = 895f;
 
-
     
-
-   
     void Update()
     {
 
@@ -41,13 +39,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.tag == "Danger")
         {
+            audioSFX.PlayDeathSFX();
             gameManager.GameOver();
         }
         else if (other.tag == "Collectible")
         {
             gameManager.score += 100;
+            audioSFX.PlayPickupSFX();
             other.gameObject.SetActive(false);
             
+        }
+        else if (other.tag == "End")
+        {
+            gameManager.LevelOver();
         }
     }
 }
