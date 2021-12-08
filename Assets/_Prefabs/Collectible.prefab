@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 5992395986175835292}
   - component: {fileID: 3330345576782886122}
   - component: {fileID: 2521045563499896074}
+  - component: {fileID: 2914873914983986936}
   - component: {fileID: -1452174425665361624}
   - component: {fileID: 2488463000411534082}
   - component: {fileID: 3473211890259752775}
   m_Layer: 0
   m_Name: Collectible
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,8 +97,25 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2914873914983986936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5680089610793200006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c4b802c43cf19429b1ce7ecbe17c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 0, z: 0}
+  moveDistance: 1
+  moveSpeed: 1
+  movesX: 0
+  movesY: 0
 --- !u!114 &-1452174425665361624
 MonoBehaviour:
   m_ObjectHideFlags: 0

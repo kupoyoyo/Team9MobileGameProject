@@ -25,11 +25,19 @@ public class Menu : MonoBehaviour
         
     }
 
-    public void PlayNewGame()
+    public void LoadLevelOne()
     {
         SceneManager.LoadScene(1);
-        
+    }
 
+    public void LoadLevelTwo()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void LoadLevelThree()
+    {
+        SceneManager.LoadScene(3);
     }
 
     public void MainMenu()
